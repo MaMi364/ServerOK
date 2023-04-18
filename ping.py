@@ -59,20 +59,24 @@ def showServers(file):
         print(server["host"], server["ip"], server["status"], server["last_checked"])
 
 
-def updateJson(file, updated_data):
+def updateJson(file, updated_data, index):
     data = readJson(file)
     #data.update(new_data)
     for server in data["servers"]:
-            server["status"] = updated_data
-            server["last_checked"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            #server["status"] = updated_data
+            #server["last_checked"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            data["servers"][index]["status"] = updated_data
+            data["servers"][index]["last_checked"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     with open(file, 'w') as outfile:
         json.dump(data, outfile, indent=4, separators=(',',': '))
 
 def check(file):
     while True:
         data = readJson(file)
-        for server in data["servers"]:
-            updateJson(file, myping(server["host"], server["ip"]))
+        #for server in data["servers"]:
+        for i, server in enumerate(data["servers"]):
+            status = myping(server["host"], server["ip"])
+            updateJson(file, status, i)
         time.sleep(120)
 
 
