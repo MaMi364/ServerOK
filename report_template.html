@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Server Status Report</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Server Status Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Host</th>
+                <th>IP Address</th>
+                <th>Status</th>
+                <th>Last Checked</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for server in servers %}
+            <tr>
+                <td>{{ server.host }}</td>
+                <td>{{ server.ip }}</td>
+                <td class="{% if server.status == 'Online' %}status-up{% else %}status-down{% endif %}">{{ server.status }}</td>
+                <td>{{ server.last_checked }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </body>
+</html>

@@ -4,13 +4,13 @@
             "host": "www.google.com",
             "ip": "172.217.23.196",
             "status": "Online",
-            "last_checked": "2023-04-18 22:10:52"
+            "last_checked": "2023-04-18 23:45:32"
         },
         {
             "host": "www.udemy.com",
             "ip": "15.20.45.82",
             "status": "Online",
-            "last_checked": "2023-04-18 22:10:55"
+            "last_checked": "2023-04-18 23:45:35"
         }
     ]
 }

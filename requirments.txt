@@ -1,0 +1,5 @@
+The only requirment to use this program is jinja2.
+
+You can install it by typing "pip install -U Jinja2"
+https://pypi.org/project/Jinja2/
+

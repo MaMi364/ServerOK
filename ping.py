@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import jinja2
 from datetime import datetime
 
 def myping(host, ip):
@@ -77,6 +78,14 @@ def check(file):
         for i, server in enumerate(data["servers"]):
             status = myping(server["host"], server["ip"])
             updateJson(file, status, i)
+            data = readJson(file) #opnieuw readen zodat we de laatste updates hebben
+            #Jinja2 gebruiken om een html report te maken van de template
+            env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
+            template = env.get_template('report_template.html')
+            servers = data["servers"]
+            html = template.render(servers=servers)
+            with open('server_status_report.html', 'w') as f:
+                f.write(html)
         time.sleep(120)
 
 
