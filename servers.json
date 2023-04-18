@@ -3,14 +3,14 @@
         {
             "host": "www.google.com",
             "ip": "172.217.23.196",
-            "status": "Online",
-            "last_checked": "2023-04-18 18:13:21"
+            "status": "Offline",
+            "last_checked": "2023-04-18 18:53:16"
         },
         {
             "host": "www.udemy.com",
             "ip": "15.20.45.82",
-            "status": "Online",
-            "last_checked": "2023-04-18 18:13:21"
+            "status": "Offline",
+            "last_checked": "2023-04-18 18:53:16"
         }
     ]
 }
