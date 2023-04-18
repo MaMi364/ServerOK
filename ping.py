@@ -130,7 +130,7 @@ def main():
                 showServers("servers.json")
             elif vraag == "2":
                 host = input("Geef de host naam in ")
-                ip = input("Geef de host naam in ")
+                ip = input("Geef de ip naam in ")
                 AddServer(host,ip,"servers.json")
                 print("U hebt een server toegevoegd ")
             elif vraag == "3":
